@@ -12,6 +12,7 @@ const HomePage = () => {
       <NavBar />
       <Hero />
       <BrandDisplay />
+      <LiveAuction />
     </div>
   )
 }
