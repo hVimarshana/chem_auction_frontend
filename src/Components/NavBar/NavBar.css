@@ -1,0 +1,154 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.9); /* Transparent background */
+  padding: 0 1rem;
+  height: 4rem;
+  position: fixed; /* Fixing the navbar */
+  width: 100%; /* Ensuring it spans the width of the viewport */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensuring it stays above other elements */
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    height: 5rem;
+    padding: 0 2rem;
+  }
+}
+
+.navbar-brand .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar-links li {
+  margin-right: 1rem;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.7;
+}
+
+.cta-btn {
+  color: #333;
+  background-color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ddd;
+}
+
+/* Mobile specific styles */
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  outline: none;
+}
+
+.menu-icon {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:focus .menu-icon,
+.menu-btn:hover .menu-icon {
+  background-color: #ddd;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999; /* Ensuring it stays above other elements */
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-links {
+  list-style-type: none;
+}
+
+.mobile-links li {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-links a:hover {
+  opacity: 0.7;
+}
+
+.mobile-cta-btn {
+  display: block;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-cta-btn:hover {
+  background-color: #ddd;
+}

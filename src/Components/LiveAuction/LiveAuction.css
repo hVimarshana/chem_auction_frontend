@@ -1,0 +1,12 @@
+.live-auction .auction-item {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .live-auction .auction-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .live-auction .auction-time {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
