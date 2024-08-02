@@ -1,16 +1,15 @@
 import React from 'react'
 import NavBar from '../../Components/NavBar'
-import Hero from '../../Components/Hero'
 import BrandDisplay from '../../Components/BrandDisplay'
 import LiveAuction from '../../Components/LiveAuction'
-//import { Grid } from '@mui/material'
+import HeroContainer from '../../Components/HeroContainer'
 
 const HomePage = () => {  
 
   return (
     <div>
       <NavBar />
-      <Hero />
+      <HeroContainer />
       <BrandDisplay />
       <LiveAuction />
     </div>

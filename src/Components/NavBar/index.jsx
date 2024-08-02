@@ -4,6 +4,13 @@ import CustomButton from '../Button'; // Ensure correct path
 
 const pages = ['Home', 'Products', 'About Us', 'Contact Us'];
 
+const pageLink = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+  { name: 'About Us', path: '/about' },
+  { name: 'Contact Us', path: '/contact' }
+];
+
 const NavBar = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -12,6 +19,7 @@ const NavBar = () => {
     const checkWindowWidth = () => {
       setIsMobileView(window.innerWidth < 768); // Adjust breakpoint as needed
     };
+
 
     checkWindowWidth();
     window.addEventListener('resize', checkWindowWidth);
