@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CustomButton from '../Button'; // Ensure correct path
 
-const pages = ['Home', 'Products', 'About Us', 'Contact Us'];
-
-const pageLink = [
+const pages = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: '/products' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Contact Us', path: '/contact' }
+  { name: 'About Us', path: '/about-us' },
+  { name: 'Contact Us', path: '/contact-us' }
 ];
 
 const NavBar = () => {
@@ -19,7 +18,6 @@ const NavBar = () => {
     const checkWindowWidth = () => {
       setIsMobileView(window.innerWidth < 768); // Adjust breakpoint as needed
     };
-
 
     checkWindowWidth();
     window.addEventListener('resize', checkWindowWidth);
@@ -35,17 +33,17 @@ const NavBar = () => {
       {/* Navbar */}
       <nav className={`navbar ${isNavOpen && isMobileView ? 'mobile-open' : ''}`}>
         <div className="navbar-brand">
-          <a href="#" className="logo">
+          <Link to="/" className="logo">
             chemAuction
-          </a>
+          </Link>
         </div>
         {/* Desktop/laptop links */}
         {!isMobileView && (
           <div className="navbar-menu">
             <ul className="navbar-links">
               {pages.map((page) => (
-                <li key={page}>
-                  <a href={`#${page.toLowerCase()}`}>{page}</a>
+                <li key={page.name}>
+                  <Link to={page.path}>{page.name}</Link>
                 </li>
               ))}
             </ul>
@@ -69,10 +67,10 @@ const NavBar = () => {
         <div className={`mobile-nav ${isNavOpen ? 'open' : ''}`}>
           <ul className="mobile-links">
             {pages.map((page) => (
-              <li key={page}>
-                <a href={`#${page.toLowerCase()}`} onClick={() => setIsNavOpen(false)}>
-                  {page}
-                </a>
+              <li key={page.name}>
+                <Link to={page.path} onClick={() => setIsNavOpen(false)}>
+                  {page.name}
+                </Link>
               </li>
             ))}
           </ul>
