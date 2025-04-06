@@ -1,0 +1,127 @@
+.client-feedback-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #ffffff;
+  }
+  
+  @media (min-width: 640px) {
+    .client-feedback-section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .client-feedback-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .text-gray-800 {
+    color: #1f2937;
+  }
+  
+  @media (min-width: 640px) {
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .text-5xl {
+      font-size: 3rem;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  .feedback-card {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .feedback-text {
+    color: #4b5563;
+  }
+  
+  .feedback-author {
+    margin-top: 1rem;
+  }
+  
+  .author-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .author-role {
+    color: #6b7280;
+  }
+  
+  .client-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .client-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  @media (min-width: 640px) {
+    .client-image {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .client-image {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+  

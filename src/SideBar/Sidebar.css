@@ -1,0 +1,102 @@
+/* Container div that wraps around the sidebar to control its size and positioning */
+.sidebar-container {
+    width: 100%;
+    height: 100%; /* Full height of the viewport */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #000; /* Black background */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0); /* Darker shadow for more depth */
+}
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid #333; /* Dark border for separation */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left-aligning the text */
+    padding-top: 1rem;
+    padding-left: 20px; /* Padding to align content left a bit */
+    background: #000; /* Solid black background */
+}
+
+.sidebar-title {
+    font-size: 1.2rem; /* Smaller font size */
+    font-weight: bold;
+    color: #fff; /* White font */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #000; /* Dark grey divider */
+    margin: 1.5rem 0; /* Divider between categories */
+}
+
+.sidebar-label-container {
+    display: block;
+    position: relative;
+    padding-left: 30px; /* Adjust padding for better alignment */
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Smaller font size */
+    color: #ddd; /* Light grey text */
+    transition: color 0.3s ease;
+}
+
+.sidebar-label-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Slightly smaller checkmark */
+    width: 20px;
+    background-color: #333; /* Dark background for unchecked state */
+    border-radius: 50%;
+    border: 2px solid #555; /* Dark grey border */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-label-container:hover .checkmark {
+    background-color: #444; /* Lighter grey when hovered */
+    border-color: #777; /* Lighter border when hovered */
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+    background-color: #2196f3; /* Blue for checked state */
+    border-color: #2196f3;
+}
+
+.sidebar-label-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.sidebar-label-container .checkmark:after {
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white; /* White dot inside checked radio button */
+}
+
+.sidebar-label-container:hover {
+    color: #2196f3; /* Light blue text when hovered */
+}

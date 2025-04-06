@@ -1,0 +1,74 @@
+.sidebar-title {
+    font-size: 20px; /* Reduced font size for a smaller and more standard look */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.sidebar-label-container {
+    display: block;
+    position: relative;
+    padding-left: 30px; /* Adjusted padding */
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size for labels */
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.sidebar-label-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Reduced size of the checkmark */
+    width: 20px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-label-container:hover .checkmark {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.sidebar-label-container .checkmark:after {
+    top: 6px;
+    left: 6px;
+    width: 8px; /* Adjusted size for the inner circle */
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.sidebar-label-container:hover {
+    color: #2196f3;
+}

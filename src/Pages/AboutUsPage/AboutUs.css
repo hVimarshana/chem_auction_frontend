@@ -1,0 +1,45 @@
+/* AboutUs.css */
+
+/* Introduction Section */
+.aboutus-intro {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.aboutus-intro p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+/* Feature Cards */
+.about-feature {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.about-feature:hover {
+    transform: translateY(-10px);
+    background-color: #fff;
+}
+
+.about-feature h6 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.about-feature p {
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-feature {
+        margin-bottom: 20px;
+    }
+}
