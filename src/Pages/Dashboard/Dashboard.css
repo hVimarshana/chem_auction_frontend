@@ -1,0 +1,76 @@
+/* Ensure no gap on the top */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #222;
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+    padding: 20px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Link Styles */
+.sidebar-link {
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: #fff;
+    background-color: #006dcd;
+}
+
+/* Content area styling */
+.content-area {
+    flex: 1;
+    margin-left: 240px;
+}
+
+/* AppBar */
+.appbar {
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    left: 240px; /* Offset to start next to the sidebar */
+    width: calc(100% - 240px); /* Width minus sidebar */
+    box-shadow: none;
+}
+
+.appbar-toolbar {
+    justify-content: flex-end;
+}
+
+.appbar-avatar {
+    background-color: #f50057;
+    cursor: pointer;
+}

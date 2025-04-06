@@ -1,0 +1,43 @@
+/* Search Bar Styling */
+.search-bar {
+    border-radius: 20px;
+    border-color: #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .MuiInputBase-input {
+    padding: 10px 12px;
+}
+
+/* Modal container */
+.modal-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.MuiTableRow-root {
+    transition: background-color 0.3s ease;
+}
+
+.MuiTableRow-root:hover {
+    background-color: #f0f0f0;
+}
+
+.MuiIconButton-root {
+    transition: transform 0.2s ease-in-out;
+}
+
+.MuiIconButton-root:hover {
+    transform: scale(1.2);
+}

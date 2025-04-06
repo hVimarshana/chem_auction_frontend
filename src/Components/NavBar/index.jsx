@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CustomButton from '../Button'; // Ensure correct path
+import LoginModal from '../LoginModal'; // Import the login modal
+import RegistrationForm from '../RegistrationModel'; // Import the registration modal
 
 const pages = [
   { name: 'Home', path: '/' },
@@ -11,76 +13,48 @@ const pages = [
 ];
 
 const NavBar = () => {
-  const [isMobileView, setIsMobileView] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false); // State to show/hide login modal
+  const [showRegisterModal, setShowRegisterModal] = useState(false); // State to show/hide register modal
 
-  useEffect(() => {
-    const checkWindowWidth = () => {
-      setIsMobileView(window.innerWidth < 768); // Adjust breakpoint as needed
-    };
+  const toggleLoginModal = () => {
+    setShowLoginModal(!showLoginModal); // Toggle login modal visibility
+  };
 
-    checkWindowWidth();
-    window.addEventListener('resize', checkWindowWidth);
-    return () => window.removeEventListener('resize', checkWindowWidth);
-  }, []);
-
-  const handleNavToggle = () => {
-    setIsNavOpen(!isNavOpen);
+  const toggleRegisterModal = () => {
+    setShowRegisterModal(!showRegisterModal); // Toggle register modal visibility
   };
 
   return (
     <header>
       {/* Navbar */}
-      <nav className={`navbar ${isNavOpen && isMobileView ? 'mobile-open' : ''}`}>
+      <nav className="navbar">
         <div className="navbar-brand">
           <Link to="/" className="logo">
             chemAuction
           </Link>
         </div>
         {/* Desktop/laptop links */}
-        {!isMobileView && (
-          <div className="navbar-menu">
-            <ul className="navbar-links">
-              {pages.map((page) => (
-                <li key={page.name}>
-                  <Link to={page.path}>{page.name}</Link>
-                </li>
-              ))}
-            </ul>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <CustomButton text="SIGN IN" />
-              <div style={{ width: '10px' }}></div> {/* Adding gap */}
-              <CustomButton text="REGISTER" />
-            </div>
-          </div>
-        )}
-        {/* Mobile toggle button */}
-        {isMobileView && (
-          <button className="menu-btn" onClick={handleNavToggle}>
-            <span className="menu-icon"></span>
-          </button>
-        )}
-      </nav>
-
-      {/* Mobile navigation */}
-      {isMobileView && (
-        <div className={`mobile-nav ${isNavOpen ? 'open' : ''}`}>
-          <ul className="mobile-links">
+        <div className="navbar-menu">
+          <ul className="navbar-links">
             {pages.map((page) => (
               <li key={page.name}>
-                <Link to={page.path} onClick={() => setIsNavOpen(false)}>
-                  {page.name}
-                </Link>
+                <Link to={page.path}>{page.name}</Link>
               </li>
-            ))}
+            ))} 
           </ul>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <CustomButton text="SIGN IN" />
-            <div style={{ height: '10px' }}></div> {/* Adding gap */}
-            <CustomButton text="REGISTER" />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <CustomButton text="LOGIN" onClick={toggleLoginModal} /> {/* Trigger login modal */}
+            <div style={{ width: '10px' }}></div> {/* Adding gap */}
+            <CustomButton text="REGISTER" onClick={toggleRegisterModal} /> {/* Trigger register modal */}
           </div>
         </div>
-      )}
+      </nav>
+
+      {/* Render LoginModal when showLoginModal is true */}
+      {showLoginModal && <LoginModal toggleModal={toggleLoginModal} />} 
+
+      {/* Render RegistrationModal when showRegisterModal is true */}
+      {showRegisterModal && <RegistrationForm toggleModal={toggleRegisterModal} />}
     </header>
   );
 };
